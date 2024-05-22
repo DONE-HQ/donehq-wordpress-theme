@@ -11,6 +11,14 @@ add_action('wp_enqueue_scripts', 'donehq_enqueue_scripts');
 
 
 
+// Отделяю стили которые были подключены инланово в хеад
+function enqueue_custom_styles() {
+    // Регистрируем и подключаем файл стилей
+    wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array(), null);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
+
+
 // Регистрирую меню
 register_nav_menus(array(
     'header_nav' => 'Header Navigation',
@@ -43,18 +51,66 @@ function default_page_menu() {
 
 
 // Добавляем классы ссылкам так как в верстке у нас меню просто из тегов a к которым привязанны классы
-add_filter( 'nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 4 );
-function filter_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
-	if ( $args->theme_location === 'header_nav' ) {
-		$atts['class'] = 'btn btn--border-blue w-button';
 
-		if ( $item->current ) {
-			$atts['class'] .= ' w--current';
-		}
-	}
+add_filter('nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 4);
+function filter_nav_menu_link_attributes($atts, $item, $args, $depth) {
+    if ($args->theme_location === 'header_nav') {
+        // Определяем, является ли устройство мобильным или десктопным
+        $is_mobile = wp_is_mobile();
+        
+        // Задаем базовый класс
+        $atts['class'] = 'btn w-button';
 
-	return $atts;
+        // Добавляем класс в зависимости от типа устройства
+        if ($is_mobile) {
+            $atts['class'] .= ' btn--border-white';
+        } else {
+            $atts['class'] .= ' btn--border-blue';
+        }
+
+        // Добавляем класс для текущего элемента меню
+        if ($item->current) {
+            $atts['class'] .= ' w--current';
+        }
+    }
+
+    return $atts;
 }
 
+
+
+// Добавляю переменные  для каждой страницы для тега html
+function add_custom_html_attributes() {
+    global $wf_page, $wf_site;
+
+    // Устанавливаю значения по умолчанию, если переменные пустые
+    if (empty($wf_page)) {
+        $wf_page = "65fb2d744558f90976ea5dc5";
+    }
+
+    if (empty($wf_site)) {
+        $wf_site = "65fb2d744558f90976ea5dc6";
+    }
+
+    echo '<script type="text/javascript">
+            document.documentElement.setAttribute("data-wf-page", "' . esc_attr($wf_page) . '");
+            document.documentElement.setAttribute("data-wf-site", "' . esc_attr($wf_site) . '");
+          </script>';
+}
+add_action('wp_head', 'add_custom_html_attributes');
+
+
+// добавляю опшенс
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+
+}
 
 

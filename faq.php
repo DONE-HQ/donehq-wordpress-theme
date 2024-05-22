@@ -8,13 +8,20 @@
 */
 
 ?>
-<?php get_header(); ?>
+<?php 
+// Объявляю переменные для атрибутов тега html данной страницы. 
+$wf_page = '66144ad77b32f4949163cbb8';
+$wf_site = '65fb2d744558f90976ea5dc6';
+
+get_header(); ?>
 <main class="main">
-<div class="breadcrumbs">
-  <a href="index.html" class="breadcrumbs__item">Home</a>
-  <div class="breadcrumbs__sep">&gt;</div>
-  <div class="breadcrumbs__item item--active">F.A.Q.</div>
-</div>
+  
+<?php
+if ( function_exists('yoast_breadcrumb') ) {
+  yoast_breadcrumb( '<div class="breadcrumbs">','</div>' );
+}
+?>
+
 <section class="common-hero hero--faq">
   <div class="container">
     <div class="common-hero__content">

@@ -1,0 +1,253 @@
+/* custom-styles.css */
+[data-loader] {display: flex}
+/* Styles for FAQ */
+[data-faq="arrow"].open {
+  transform: rotate(180deg);
+}
+/* start state */
+[data-faq="answer-wrap"] {
+  max-height: 0;
+  opacity: 0;
+}
+[data-faq="answer-wrap"].open {
+  max-height: 1000px;
+  opacity: 1;
+}
+[data-faq="plus-vertical"].open {
+  transform: rotate(0deg);
+}
+
+
+
+ /* css styles for FLiud */
+ @media (min-width: 768px) {
+  body {
+    font-size: 0.8333333333333334vw;
+  }
+}
+/* tablet */
+@media screen and (max-width: 991px) {
+  :root {}
+}
+/* landscape */
+@media screen and (max-width: 767px) {
+  .container { max-width: 480px; }
+  :root {
+    --heading--main: 2em;
+    --heading--large: 2.5em;
+    --heading--small: 1.5em;
+    --text--main: 1em;
+    --text--large: 1.5em;
+    --space--small: 1em;
+    --space--medium: 2.5em;
+    --space--large: 4em;
+    --space--extra-large: 5em;
+  }
+}
+/* portrait */
+@media screen and (max-width: 479px) {
+  :root {}
+}
+
+
+body {
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6, p, label, blockquote {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+button {
+  background-color: unset;
+  padding: unset;
+  text-align: inherit;
+}
+img::selection {
+  background: transparent;
+}
+:is(h1, h2, h3, h4, h5, h6, p) a {
+  text-decoration: underline;
+}
+.w-richtext > *:first-child {
+  margin-top: 0;
+}
+.w-richtext > *:last-child {
+  margin-bottom: 0;
+}
+video {
+  width: 100%;
+  object-fit: cover;
+}
+video.wf-empty {
+  padding: 0;
+}
+svg {
+  display: block;
+}
+section, header, footer {
+  position: relative;
+}
+
+
+/* Show/hide styles */
+[data-desktop] {
+  display: block
+}
+[data-desktop-flex] {
+  display: flex
+}
+[data-mobile] {
+  display: none
+}
+[data-mobile-flex] {
+  display: none
+}
+@media screen and (max-width:767px) {
+  [data-desktop] {
+    display: none;
+  }
+  [data-desktop-flex] {
+    display: none
+  }
+  [data-mobile] {
+    display: block;
+  }
+  [data-mobile-flex] {
+    display: flex!important;
+  }
+}
+/* Section styles */
+section {
+  width: 100%;
+  position: relative;
+  padding: 7.5em 5em;
+}
+@media screen and (max-width:767px) {
+  .btn {font-size: 17px;}
+  section {
+    padding: 68px 20px;
+  }
+}
+.hide {
+  display: none !important;
+}
+[data-css="overflow-hidden"] {
+  overflow: hidden;
+}
+/* fix after click anchor link */
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+/* scrollbar none */
+[data-css="scrollbar-none"]::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+/* canvas cursor */
+canvas {
+  cursor: url("https://uploads-ssl.webflow.com/65e76fa8241fed2684a8f549/65ea00ced1d5a793244334aa_cursor-16.svg"),pointer
+}
+
+
+ /* Animations */
+ [data-arrow-move], [data-arrow-rotated] { transition: all 0.3s ease }
+ [data-css="btn-arrow"]:hover > [data-arrow-move] {
+   transform: translate(4px, 0px);
+ }
+ [data-css="btn-arrow"]:hover [data-arrow-rotated] {
+   transform: rotate(0deg);
+ }
+ @keyframes scrollLeft {
+   0% { transform: translate(0) }
+   100% { transform: translate(-100%) }
+ }
+ @keyframes scrollRight {
+   0% { transform: translate(0) }
+   100% { transform: translate(100%) }
+ }
+ /* Rotated star from home/hero */
+ @keyframes rotated {
+   from { transform: rotate(0deg) }
+   to { transform: rotate(360deg) }
+ }
+ /* Phones from cases page */
+ @keyframes phoneLeftMove {
+   0% { transform: translateY(-5.7em) }
+   100% { transform: translateY(-2em) }
+ }
+ @keyframes phoneRightMove {
+   0% { transform: translateY(0em) }
+   100% { transform: translateY(-3em) }
+ }
+ [data-phone-img="left"] {
+   animation: phoneLeftMove 8s ease infinite alternate;
+ }
+ [data-phone-img="right"] {
+   animation: phoneRightMove 9s ease infinite alternate;
+ }
+
+
+ .logo-spinner {
+  position: relative;
+}
+.logo-spinner:before {
+  content: '';
+  position: absolute;
+  background-color: #06038D;
+  height: 70px;
+  opacity: 0.5;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.034);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  animation: logoSpinner-pulseCircle;
+}
+@keyframes logoSpinner-pulseCircle {
+  46% {
+    transform: scale(1.55);
+    opacity: 1;
+  }
+}
+.logo-spinner svg {
+  width: 120px;
+  height: auto;
+  padding: 2px 12px;
+  animation-name: logoSpinner-pulseMovement;
+}
+@keyframes logoSpinner-pulseMovement {
+  46% {
+    transform: scale(0.86);
+  }
+}
+g.logo-spinner--done,
+g.logo-spinner--hq {
+  overflow: hidden;
+}
+path.logo-spinner--symbol { 
+  transform-origin: 83%;
+  animation-name: logoSpinner-symbolMovement;
+}
+/* Animation config */
+.logo-spinner svg,
+.logo-spinner:before {
+  animation-duration: 1.58s; /* Speed */
+  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+#loom-companion-mv3 {
+  background-color: #06038d;
+}
+@media screen and (max-width: 768px) {
+.orange-btn {
+  max-width: 280px;
+} 
+}

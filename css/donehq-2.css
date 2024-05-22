@@ -1580,7 +1580,7 @@ figcaption {
   position: absolute;
   top: 1.5em;
   bottom: auto;
-  left: 5em;
+  left: 6em;
   right: auto;
 }
 
@@ -1594,19 +1594,20 @@ figcaption {
   text-decoration: none;
 }
 
-.breadcrumbs__item.item--active {
+.breadcrumbs .breadcrumb_last {
   color: var(--color--primary-blue);
   cursor: default;
 }
 
-.breadcrumbs__item.item--blog-tag.item--active {
+.breadcrumbs .breadcrumb_last {
   text-transform: capitalize;
 }
-
-.breadcrumbs__sep {
+.breadcrumbs,
+.breadcrumbs a {
   color: var(--color--minor-text);
   flex: none;
   font-size: 16px;
+  text-decoration: none;
 }
 
 .c-hero__content {
