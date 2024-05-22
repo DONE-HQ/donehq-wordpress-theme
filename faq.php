@@ -26,7 +26,7 @@ if ( function_exists('yoast_breadcrumb') ) {
   <div class="container">
     <div class="common-hero__content">
       <div class="common-hero__title-wrap wrap--without-text">
-        <h1 class="common-hero__title title--faq">You Ask<br>We Answer</h1>
+        <h1 class="common-hero__title title--faq"><?php the_title(); ?></h1>
       </div>
     </div>
   </div>

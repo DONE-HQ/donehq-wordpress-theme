@@ -25,7 +25,7 @@ if ( function_exists('yoast_breadcrumb') ) {
 <section class="common-hero">
       <div class="container">
         <div class="common-hero__content">
-          <h1 class="common-hero__title">Reach Us</h1>
+        <h1 class="common-hero__title"><?php the_title(); ?></h1>
         </div>
       </div>
     </section>
