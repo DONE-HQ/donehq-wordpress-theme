@@ -55,10 +55,11 @@
   <?php
 // Получить значение поля "header_logo" из страницы опций
 $header_logo = get_field('header_logo', 'option');
+$header_logo_white = get_field('header_logo_white', 'option');
 
 // Проверить и вывести значение
 if( $header_logo ) {
-    echo '<a href="'.home_url().'" data-logo="original" aria-current="page" class="header__logo-wrap w-inline-block w--current"><img src="'. esc_html($header_logo) .'" alt="" animate-body-to="2" class="header__logo-blue"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-donehq-white.svg" alt="" animate-body-to="1" class="header__logo-white hide"></a>';
+    echo '<a href="'.home_url().'" data-logo="original" aria-current="page" class="header__logo-wrap w-inline-block w--current"><img src="'. esc_html($header_logo) .'" alt="" animate-body-to="2" class="header__logo-blue"><img src="'. esc_html($header_logo_white) .'" alt="" animate-body-to="1" class="header__logo-white hide"></a>';
 }
 ?>
   

@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_664dd38d02983",
-            "label": "Footer",
+            "label": "Footer and Contacts",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -117,6 +117,26 @@
             "mime_types": ""
         },
         {
+            "key": "field_664de956ddf03",
+            "label": "Logo White",
+            "name": "header_logo_white",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_664dd43599110",
             "label": "Button text",
             "name": "header_button_text",
@@ -175,5 +195,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716376678
+    "modified": 1716382057
 }
