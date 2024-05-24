@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html data-wf-page="<?php echo esc_attr($wf_page); ?>" data-wf-site="<?php echo esc_attr($wf_site); ?>" lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>DONE HQ - Integrated Web Engineering Crew.</title>
@@ -13,26 +14,67 @@
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="6bb45b8b-f51e-d72e-7cbd-c050628dafba"] {opacity:0;}html.w-mod-js:not(.w-mod-ix) [data-w-id="80eccc43-adab-eda6-6d87-459bc27a8e33"] {opacity:0;}html.w-mod-js:not(.w-mod-ix) [data-w-id="6a659206-c8b2-e165-1f69-edf234cf66c6"] {opacity:0;}}@media (max-width:991px) and (min-width:768px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="6bb45b8b-f51e-d72e-7cbd-c050628dafba"] {opacity:0;}html.w-mod-js:not(.w-mod-ix) [data-w-id="80eccc43-adab-eda6-6d87-459bc27a8e33"] {opacity:0;}html.w-mod-js:not(.w-mod-ix) [data-w-id="6a659206-c8b2-e165-1f69-edf234cf66c6"] {opacity:0;}}</style>
+  <style>
+    @media (min-width:992px) {
+      html.w-mod-js:not(.w-mod-ix) [data-w-id="6bb45b8b-f51e-d72e-7cbd-c050628dafba"] {
+        opacity: 0;
+      }
+
+      html.w-mod-js:not(.w-mod-ix) [data-w-id="80eccc43-adab-eda6-6d87-459bc27a8e33"] {
+        opacity: 0;
+      }
+
+      html.w-mod-js:not(.w-mod-ix) [data-w-id="6a659206-c8b2-e165-1f69-edf234cf66c6"] {
+        opacity: 0;
+      }
+    }
+
+    @media (max-width:991px) and (min-width:768px) {
+      html.w-mod-js:not(.w-mod-ix) [data-w-id="6bb45b8b-f51e-d72e-7cbd-c050628dafba"] {
+        opacity: 0;
+      }
+
+      html.w-mod-js:not(.w-mod-ix) [data-w-id="80eccc43-adab-eda6-6d87-459bc27a8e33"] {
+        opacity: 0;
+      }
+
+      html.w-mod-js:not(.w-mod-ix) [data-w-id="6a659206-c8b2-e165-1f69-edf234cf66c6"] {
+        opacity: 0;
+      }
+    }
+  </style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-  <script type="text/javascript">WebFont.load({  google: {    families: ["Onest:regular,500,700"]  }});</script>
-  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/images/favicon.png" rel="shortcut icon" type="image/x-icon">
-  <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/images/webclip.png" rel="apple-touch-icon">
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Onest:regular,500,700"]
+      }
+    });
+  </script>
+  <script type="text/javascript">
+    ! function(o, c) {
+      var n = c.documentElement,
+        t = " w-mod-";
+      n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+    }(window, document);
+  </script>
+  <link href="<?php echo esc_url(get_template_directory_uri()); ?>/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="<?php echo esc_url(get_template_directory_uri()); ?>/images/webclip.png" rel="apple-touch-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<?php wp_head(); ?>
+  <?php wp_head(); ?>
 
 </head>
+
 <body <?php body_class('myClass secondcass'); ?>>
   <div class="css">
     <div class="css-fliud w-embed">
-      
+
     </div>
     <div class="css-base w-embed">
-      
+
     </div>
     <div class="css-other w-embed">
     </div>
@@ -52,85 +94,88 @@
   </section>
   <header class="header">
 
-  <?php
-// Получить значение поля "header_logo" из страницы опций
-$header_logo = get_field('header_logo', 'option');
-$header_logo_white = get_field('header_logo_white', 'option');
+    <?php
+    // Получить значение поля "header_logo" из страницы опций
+    $header_logo = get_field('header_logo', 'option');
+    $header_logo_white = get_field('header_logo_white', 'option');
 
-// Проверить и вывести значение
-if( $header_logo ) {
-    echo '<a href="'.home_url().'" data-logo="original" aria-current="page" class="header__logo-wrap w-inline-block w--current"><img src="'. esc_html($header_logo) .'" alt="" animate-body-to="2" class="header__logo-blue"><img src="'. esc_html($header_logo_white) .'" alt="" animate-body-to="1" class="header__logo-white hide"></a>';
-}
-?>
-  
-  
-    
+    // Проверить и вывести значение
+    if ($header_logo)
+    {
+      echo '<a href="' . home_url() . '" data-logo="original" aria-current="page" class="header__logo-wrap w-inline-block w--current"><img src="' . esc_html($header_logo) . '" alt="" animate-body-to="2" class="header__logo-blue"><img src="' . esc_html($header_logo_white) . '" alt="" animate-body-to="1" class="header__logo-white hide"></a>';
+    }
+    ?>
 
- 
+
+
+
+
     <div data-desktop-flex="" class="header__nav-links">
-           <?php
-            $menuParameters = array(
-              'theme_location'  => 'header_nav', 
-              'container'       => false,
-              'echo'            => false,
-              'items_wrap'      => '%3$s',
-              'depth'           => 0,
-            );
-            echo strip_tags(wp_nav_menu( $menuParameters ), '<a>' );
-            ?>
+      <?php
+      $menuParameters = array(
+        'theme_location' => 'header_nav',
+        'container' => false,
+        'echo' => false,
+        'items_wrap' => '%3$s',
+        'depth' => 0,
+      );
+      echo strip_tags(wp_nav_menu($menuParameters), '<a>');
+      ?>
     </div>
 
     <?php
-// Получить значение поля "footer_email" из страницы опций
-$header_button_text = get_field('header_button_text', 'option');
-$header_button_link = get_field('header_button_link', 'option');
+    // Получить значение поля "footer_email" из страницы опций
+    $header_button_text = get_field('header_button_text', 'option');
+    $header_button_link = get_field('header_button_link', 'option');
 
-// Проверить и вывести значение
-if( $header_button_link ) {
-    echo '
+    // Проверить и вывести значение
+    if ($header_button_link)
+    {
+      echo '
 
-    <a href="mailto:'. esc_html($header_button_link) .'" data-desktop-flex="" data-css="btn-arrow" class="btn w-inline-block">
+    <a href="mailto:' . esc_html($header_button_link) . '" data-desktop-flex="" data-css="btn-arrow" class="btn w-inline-block">
       <div>' . esc_html($header_button_text) . '</div><img src="https://uploads-ssl.webflow.com/65ca48647f3eeedb29f339ad/65caa14408754eab01abcef2_arrow-right-white.svg" alt="" data-arrow-rotated="" class="btn__arrow">
     </a>';
     }
     ?>
-    
 
-    
-    
-    <a data-action="menu-open" data-mobile-flex="" data-w-id="cd1cc1c4-7e94-3624-5696-c4fc5ffd0991" href="#" class="header__humburger w-inline-block"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/humburger-white.svg" alt="" class="header__humburger-icon-white hide"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/humburger.svg" alt="" class="header__humburger-icon"></a>
+
+
+
+    <a data-action="menu-open" data-mobile-flex="" data-w-id="cd1cc1c4-7e94-3624-5696-c4fc5ffd0991" href="#" class="header__humburger w-inline-block"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/humburger-white.svg" alt="" class="header__humburger-icon-white hide"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/humburger.svg" alt="" class="header__humburger-icon"></a>
     <div class="menu">
       <div data-mobile-flex="" class="menu__top-wrap">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-current="page" class="menu__logo w-inline-block w--current"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-donehq-white.svg" alt="" animate-body-to="1"></a>
-        <a data-action="menu-close" data-w-id="025c54a9-212a-520a-c085-4b210e97f0ee" href="#" class="menu__humburger w-inline-block"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/humburger-white-close.svg" loading="lazy" alt=""></a>
+        <a href="<?php echo esc_url(home_url('/')); ?>" aria-current="page" class="menu__logo w-inline-block w--current"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/logo-donehq-white.svg" alt="" animate-body-to="1"></a>
+        <a data-action="menu-close" data-w-id="025c54a9-212a-520a-c085-4b210e97f0ee" href="#" class="menu__humburger w-inline-block"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/humburger-white-close.svg" loading="lazy" alt=""></a>
       </div>
       <div class="menu__nav">
         <?php
-            $menuParameters = array(
-              'theme_location'  => 'header_nav', 
-              'container'       => false,
-              'echo'            => false,
-              'items_wrap'      => '%3$s',
-              'depth'           => 0,
-            );
-            echo strip_tags(wp_nav_menu( $menuParameters ), '<a>' );
-            ?>
+        $menuParameters = array(
+          'theme_location' => 'header_nav',
+          'container' => false,
+          'echo' => false,
+          'items_wrap' => '%3$s',
+          'depth' => 0,
+        );
+        echo strip_tags(wp_nav_menu($menuParameters), '<a>');
+        ?>
       </div>
       <?php
-// Получить значение поля "footer_email" из страницы опций
-$header_button_text = get_field('header_button_text', 'option');
-$header_button_link = get_field('header_button_link', 'option');
+      // Получить значение поля "footer_email" из страницы опций
+      $header_button_text = get_field('header_button_text', 'option');
+      $header_button_link = get_field('header_button_link', 'option');
 
-// Проверить и вывести значение
-if( $header_button_text ) {
-    echo '
+      // Проверить и вывести значение
+      if ($header_button_text)
+      {
+        echo '
 
 
-      <a href="mailto:'. esc_html($header_button_link) .'" data-action="menu-close" data-css="btn-arrow" data-mobile-flex="" data-w-id="025c54a9-212a-520a-c085-4b210e97f0f9" class="btn orange-btn w-inline-block">
+      <a href="mailto:' . esc_html($header_button_link) . '" data-action="menu-close" data-css="btn-arrow" data-mobile-flex="" data-w-id="025c54a9-212a-520a-c085-4b210e97f0f9" class="btn orange-btn w-inline-block">
         <div>' . esc_html($header_button_text) . '</div><img src="https://uploads-ssl.webflow.com/65ca48647f3eeedb29f339ad/65caa14408754eab01abcef2_arrow-right-white.svg" loading="lazy" data-arrow-move="" alt="" class="btn__arrow">
       </a>';
-    }
-    ?>
-      </div>
+      }
+      ?>
+    </div>
 
   </header>

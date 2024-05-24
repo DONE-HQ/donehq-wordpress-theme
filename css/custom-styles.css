@@ -1,37 +1,48 @@
 /* custom-styles.css */
-[data-loader] {display: flex}
+[data-loader] {
+  display: flex
+}
+
 /* Styles for FAQ */
 [data-faq="arrow"].open {
   transform: rotate(180deg);
 }
+
 /* start state */
 [data-faq="answer-wrap"] {
   max-height: 0;
   opacity: 0;
 }
+
 [data-faq="answer-wrap"].open {
   max-height: 1000px;
   opacity: 1;
 }
+
 [data-faq="plus-vertical"].open {
   transform: rotate(0deg);
 }
 
 
 
- /* css styles for FLiud */
- @media (min-width: 768px) {
+/* css styles for FLiud */
+@media (min-width: 768px) {
   body {
     font-size: 0.8333333333333334vw;
   }
 }
+
 /* tablet */
 @media screen and (max-width: 991px) {
   :root {}
 }
+
 /* landscape */
 @media screen and (max-width: 767px) {
-  .container { max-width: 480px; }
+  .container {
+    max-width: 480px;
+  }
+
   :root {
     --heading--main: 2em;
     --heading--large: 2.5em;
@@ -44,6 +55,7 @@
     --space--extra-large: 5em;
   }
 }
+
 /* portrait */
 @media screen and (max-width: 479px) {
   :root {}
@@ -54,38 +66,58 @@ body {
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, h4, h5, h6, p, label, blockquote {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+blockquote {
   margin-top: 0;
   margin-bottom: 0;
 }
+
 button {
   background-color: unset;
   padding: unset;
   text-align: inherit;
 }
+
 img::selection {
   background: transparent;
 }
+
 :is(h1, h2, h3, h4, h5, h6, p) a {
   text-decoration: underline;
 }
-.w-richtext > *:first-child {
+
+.w-richtext>*:first-child {
   margin-top: 0;
 }
-.w-richtext > *:last-child {
+
+.w-richtext>*:last-child {
   margin-bottom: 0;
 }
+
 video {
   width: 100%;
   object-fit: cover;
 }
+
 video.wf-empty {
   padding: 0;
 }
+
 svg {
   display: block;
 }
-section, header, footer {
+
+section,
+header,
+footer {
   position: relative;
 }
 
@@ -94,51 +126,67 @@ section, header, footer {
 [data-desktop] {
   display: block
 }
+
 [data-desktop-flex] {
   display: flex
 }
+
 [data-mobile] {
   display: none
 }
+
 [data-mobile-flex] {
   display: none
 }
+
 @media screen and (max-width:767px) {
   [data-desktop] {
     display: none;
   }
+
   [data-desktop-flex] {
     display: none
   }
+
   [data-mobile] {
     display: block;
   }
+
   [data-mobile-flex] {
-    display: flex!important;
+    display: flex !important;
   }
 }
+
 /* Section styles */
 section {
   width: 100%;
   position: relative;
   padding: 7.5em 5em;
 }
+
 @media screen and (max-width:767px) {
-  .btn {font-size: 17px;}
+  .btn {
+    font-size: 17px;
+  }
+
   section {
     padding: 68px 20px;
   }
 }
+
 .hide {
   display: none !important;
 }
+
 [data-css="overflow-hidden"] {
   overflow: hidden;
 }
+
 /* fix after click anchor link */
 :focus-visible {
   outline: -webkit-focus-ring-color auto 0px;
 }
+
 /* scrollbar none */
 [data-css="scrollbar-none"]::-webkit-scrollbar {
   display: none;
@@ -147,53 +195,92 @@ section {
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
 }
+
 /* canvas cursor */
 canvas {
-  cursor: url("https://uploads-ssl.webflow.com/65e76fa8241fed2684a8f549/65ea00ced1d5a793244334aa_cursor-16.svg"),pointer
+  cursor: url("https://uploads-ssl.webflow.com/65e76fa8241fed2684a8f549/65ea00ced1d5a793244334aa_cursor-16.svg"), pointer
 }
 
 
- /* Animations */
- [data-arrow-move], [data-arrow-rotated] { transition: all 0.3s ease }
- [data-css="btn-arrow"]:hover > [data-arrow-move] {
-   transform: translate(4px, 0px);
- }
- [data-css="btn-arrow"]:hover [data-arrow-rotated] {
-   transform: rotate(0deg);
- }
- @keyframes scrollLeft {
-   0% { transform: translate(0) }
-   100% { transform: translate(-100%) }
- }
- @keyframes scrollRight {
-   0% { transform: translate(0) }
-   100% { transform: translate(100%) }
- }
- /* Rotated star from home/hero */
- @keyframes rotated {
-   from { transform: rotate(0deg) }
-   to { transform: rotate(360deg) }
- }
- /* Phones from cases page */
- @keyframes phoneLeftMove {
-   0% { transform: translateY(-5.7em) }
-   100% { transform: translateY(-2em) }
- }
- @keyframes phoneRightMove {
-   0% { transform: translateY(0em) }
-   100% { transform: translateY(-3em) }
- }
- [data-phone-img="left"] {
-   animation: phoneLeftMove 8s ease infinite alternate;
- }
- [data-phone-img="right"] {
-   animation: phoneRightMove 9s ease infinite alternate;
- }
+/* Animations */
+[data-arrow-move],
+[data-arrow-rotated] {
+  transition: all 0.3s ease
+}
+
+[data-css="btn-arrow"]:hover>[data-arrow-move] {
+  transform: translate(4px, 0px);
+}
+
+[data-css="btn-arrow"]:hover [data-arrow-rotated] {
+  transform: rotate(0deg);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translate(0)
+  }
+
+  100% {
+    transform: translate(-100%)
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translate(0)
+  }
+
+  100% {
+    transform: translate(100%)
+  }
+}
+
+/* Rotated star from home/hero */
+@keyframes rotated {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+/* Phones from cases page */
+@keyframes phoneLeftMove {
+  0% {
+    transform: translateY(-5.7em)
+  }
+
+  100% {
+    transform: translateY(-2em)
+  }
+}
+
+@keyframes phoneRightMove {
+  0% {
+    transform: translateY(0em)
+  }
+
+  100% {
+    transform: translateY(-3em)
+  }
+}
+
+[data-phone-img="left"] {
+  animation: phoneLeftMove 8s ease infinite alternate;
+}
+
+[data-phone-img="right"] {
+  animation: phoneRightMove 9s ease infinite alternate;
+}
 
 
- .logo-spinner {
+.logo-spinner {
   position: relative;
 }
+
 .logo-spinner:before {
   content: '';
   position: absolute;
@@ -210,44 +297,114 @@ canvas {
   bottom: 0;
   animation: logoSpinner-pulseCircle;
 }
+
 @keyframes logoSpinner-pulseCircle {
   46% {
     transform: scale(1.55);
     opacity: 1;
   }
 }
+
 .logo-spinner svg {
   width: 120px;
   height: auto;
   padding: 2px 12px;
   animation-name: logoSpinner-pulseMovement;
 }
+
 @keyframes logoSpinner-pulseMovement {
   46% {
     transform: scale(0.86);
   }
 }
+
 g.logo-spinner--done,
 g.logo-spinner--hq {
   overflow: hidden;
 }
-path.logo-spinner--symbol { 
+
+path.logo-spinner--symbol {
   transform-origin: 83%;
   animation-name: logoSpinner-symbolMovement;
 }
+
 /* Animation config */
 .logo-spinner svg,
 .logo-spinner:before {
-  animation-duration: 1.58s; /* Speed */
+  animation-duration: 1.58s;
+  /* Speed */
   animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
+
 #loom-companion-mv3 {
   background-color: #06038d;
 }
+
 @media screen and (max-width: 768px) {
-.orange-btn {
-  max-width: 280px;
-} 
+  .orange-btn {
+    max-width: 280px;
+  }
+}
+
+@media screen and (min-width:767px) {
+  .cases__item:hover .cases__item-top {
+    border: solid 1px var(--color--accent-blue);
+    border-radius: var(--radius--radius-main);
+  }
+
+  .cases__item:hover .cases__item-bot {
+    border-radius: var(--radius--radius-main);
+  }
+
+  .cases__item:hover .cases__item-img {
+    transform: scale(1.05);
+  }
+
+  .cases__item:hover .cases__item-top,
+  .cases__item:hover .cases__item-bot {
+    border-radius: 40px;
+  }
+}
+
+
+
+.cats-list a {
+  border: 1px solid;
+  padding: 5px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.cats-list a.c-1 {
+  color: #2965FF;
+  border-color: #2965FF;
+}
+
+.cats-list a.c-2 {
+  color: #85E20E;
+  border-color: #85E20E;
+}
+
+.cats-list a.c-3 {
+  color: #fc4c02;
+  border-color: #fc4c02;
+}
+
+.cats-list a.c-1.active {
+  color: #fff;
+  background-color: #2965FF;
+}
+
+.cats-list a.c-2.active {
+  color: #fff;
+  background-color: #85E20E;
+}
+
+.cats-list a.c-3.active {
+  color: #fff;
+  background-color: #fc4c02;
 }
