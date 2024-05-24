@@ -1,48 +1,65 @@
 <?php
 /*
-Template Name: Template 99
+Template Name: OwnUp
 Template Post Type: case-studies
 */
 get_header();
 ?>
 
-<div id="primary" class="content-area">
-    <main id="main" class="site-main">
-        <h1>Template 1</h1>
-        <?php
-        while (have_posts()) :
-            the_post();
-            // Ваш код шаблона здесь
+<?php
+// Объявляю переменные для атрибутов тега html данной страницы. 
+$wf_page = '660dcb9528d3895f0e5be8f4';
+$wf_site = '65fb2d744558f90976ea5dc6';
+get_header();
+?>
 
-            // Отображение полей ACF
-            if (function_exists('the_field'))
-            {
-                // Выводим все метаполя для отладки
-                $fields = get_field_objects();
-                if ($fields)
-                {
-                    echo '<ul>';
-                    foreach ($fields as $field)
-                    {
-                        echo '<li>' . $field['label'] . ': ' . get_field($field['name']) . '</li>';
-                    }
-                    echo '</ul>';
-                }
-                else
-                {
-                    echo 'No ACF fields found.';
-                }
-            }
-            else
-            {
-                echo 'ACF not active.';
-            }
-        endwhile;
-        ?>
-    </main><!-- .site-main -->
-</div><!-- .content-area -->
+<main id="main" class="main">
+
+    <?php
+    if (function_exists('yoast_breadcrumb'))
+    {
+        yoast_breadcrumb('<div class="breadcrumbs">', '</div>');
+    }
+    ?>
+
+    <section class="common-hero">
+        <div class="container">
+            <div class="common-hero__content">
+                <div class="common-hero__title-wrap">
+                    <h1 class="common-hero__title"><?php single_post_title(); ?></h1>
+                </div>
+                <div class="common-hero__frames">
+                    <div class="cats-list">
+                        <?php
+                        // Получаем ID текущего поста или страницы
+                        $current_post_id = get_the_ID();
+
+                        // Получаем все термины из кастомной таксономии 'case-category', к которым принадлежит текущий пост
+                        $categories = get_the_terms($current_post_id, 'case-category');
+
+                        if (!empty($categories) && !is_wp_error($categories))
+                        {
+                            $counter = 1; // Инициализируем счетчик
+                            foreach ($categories as $category)
+                            {
+                                // Создаем ссылку на архивную страницу для данной категории
+                                $category_link = get_term_link($category);
+
+                                // Выводим ссылку с учетом активного класса
+                                echo '<a href="' . esc_url($category_link) . '" class="cat-link c-' . $counter . '" data-category="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</a>';
+
+                                $counter++; // Увеличиваем счетчик
+                            }
+                        }
+                        ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
 <?php
-get_sidebar();
 get_footer();
 ?>

@@ -377,33 +377,47 @@ path.logo-spinner--symbol {
   text-decoration: none;
   cursor: pointer;
   margin-right: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
-.cats-list a.c-1 {
+.cats-list a.c-1,
+.cats-list a.c-4 {
   color: #2965FF;
   border-color: #2965FF;
 }
 
-.cats-list a.c-2 {
+.cats-list a.c-2,
+.cats-list a.c-5 {
   color: #85E20E;
   border-color: #85E20E;
 }
 
-.cats-list a.c-3 {
+.cats-list a.c-3,
+.cats-list a.c-6 {
   color: #fc4c02;
   border-color: #fc4c02;
 }
 
+.cats-list a.c-4:hover,
+.cats-list a.c-4.active,
+.cats-list a.c-1:hover,
 .cats-list a.c-1.active {
   color: #fff;
   background-color: #2965FF;
 }
 
+.cats-list a.c-5:hover,
+.cats-list a.c-5.active,
+.cats-list a.c-2:hover,
 .cats-list a.c-2.active {
   color: #fff;
   background-color: #85E20E;
 }
 
+.cats-list a.c-6:hover,
+.cats-list a.c-6.active,
+.cats-list a.c-3:hover,
 .cats-list a.c-3.active {
   color: #fff;
   background-color: #fc4c02;
