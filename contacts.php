@@ -37,6 +37,8 @@ get_header();
     <section class="contact">
         <div class="container">
             <div class="contact__inner">
+
+
                 <?php
                 // Получить значение поля "footer_phone" из страницы опций
                 $footer_phone = get_field('footer_phone', 'option');
@@ -44,14 +46,21 @@ get_header();
                 // Проверить и вывести значение
                 if ($footer_phone)
                 {
-                    // Удалить знаки +, - и пробелы
-                    $phone_sanitized = str_replace(['+', '-', ' '], '', $footer_phone);
+                    // Удалить все символы, кроме цифр и знака плюса
+                    $phone_sanitized = preg_replace('/[^\d+]/', '', $footer_phone);
                     echo '<a id="w-node-_006635a8-a843-090c-9039-bd6d28ce1c36-fcacf474" href="tel:' . esc_html($phone_sanitized) . '" class="contact__item item--dark-blue w-inline-block">
             <div class="heading">Call Us</div>
             <div class="contact__item-text"> ' . esc_html($footer_phone) . '</div>
           </a>';
                 }
                 ?>
+
+
+
+
+
+
+
 
                 <?php
                 // Получить значение поля "footer_email" из страницы опций
