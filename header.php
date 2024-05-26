@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-wf-page="<?php echo esc_attr($wf_page); ?>" data-wf-site="<?php echo esc_attr($wf_site); ?>" lang="en">
+<html <?php language_attributes(); ?> lang="en">
 
 <head>
   <meta charset="utf-8">

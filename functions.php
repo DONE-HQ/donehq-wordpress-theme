@@ -87,8 +87,13 @@ function filter_nav_menu_link_attributes($atts, $item, $args, $depth)
 
 
 
-// Добавляю переменные  для каждой страницы для тега html
-function add_custom_html_attributes()
+function start_buffer()
+{
+    ob_start("modify_html_tag");
+}
+add_action('get_header', 'start_buffer');
+
+function modify_html_tag($buffer)
 {
     global $wf_page, $wf_site;
 
@@ -103,12 +108,20 @@ function add_custom_html_attributes()
         $wf_site = "65fb2d744558f90976ea5dc6";
     }
 
-    echo '<script type="text/javascript">
-            document.documentElement.setAttribute("data-wf-page", "' . esc_attr($wf_page) . '");
-            document.documentElement.setAttribute("data-wf-site", "' . esc_attr($wf_site) . '");
-          </script>';
+    // Добавляем атрибуты data-wf-page и data-wf-site в тэг <html>
+    $buffer = str_replace('<html', '<html data-wf-page="' . esc_attr($wf_page) . '" data-wf-site="' . esc_attr($wf_site) . '"', $buffer);
+
+    return $buffer;
 }
-add_action('wp_head', 'add_custom_html_attributes');
+
+function end_buffer()
+{
+    if (ob_get_length())
+    {
+        ob_end_flush();
+    }
+}
+add_action('wp_footer', 'end_buffer');
 
 
 // добавляю опшенс
