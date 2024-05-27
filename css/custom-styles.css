@@ -422,3 +422,77 @@ path.logo-spinner--symbol {
   color: #fff;
   background-color: #fc4c02;
 }
+
+/* Animations */
+[data-arrow-move],
+[data-arrow-rotated] {
+  transition: all 0.3s ease
+}
+
+[data-css="btn-arrow"]:hover>[data-arrow-move] {
+  transform: translate(4px, 0px);
+}
+
+[data-css="btn-arrow"]:hover [data-arrow-rotated] {
+  transform: rotate(0deg);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translate(0)
+  }
+
+  100% {
+    transform: translate(-100%)
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translate(0)
+  }
+
+  100% {
+    transform: translate(100%)
+  }
+}
+
+/* Rotated star from home/hero */
+@keyframes rotated {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+/* Phones from cases page */
+@keyframes phoneLeftMove {
+  0% {
+    transform: translateY(-5.7em)
+  }
+
+  100% {
+    transform: translateY(-2em)
+  }
+}
+
+@keyframes phoneRightMove {
+  0% {
+    transform: translateY(0em)
+  }
+
+  100% {
+    transform: translateY(-3em)
+  }
+}
+
+.c-hero__phone-1 {
+  animation: phoneLeftMove 8s ease infinite alternate;
+}
+
+.c-hero__phone-2 {
+  animation: phoneRightMove 9s ease infinite alternate;
+}

@@ -17,6 +17,7 @@ function enqueue_custom_styles()
 {
     // Регистрируем и подключаем файл стилей
     wp_enqueue_style('custom-styles', get_template_directory_uri() . '/css/custom-styles.css', array(), null);
+    wp_enqueue_script('custom-scripts', get_template_directory_uri() . '/js/custom-scripts.js', '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 
