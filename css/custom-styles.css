@@ -496,3 +496,10 @@ path.logo-spinner--symbol {
 .c-hero__phone-2 {
   animation: phoneRightMove 9s ease infinite alternate;
 }
+
+.services-item__top-left {
+  background-color: var(--color--accent-red);
+  border-radius: 2.5em;
+  min-height: auto;
+  overflow: hidden;
+}
