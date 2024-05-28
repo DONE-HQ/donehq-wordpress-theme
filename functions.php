@@ -1,4 +1,5 @@
 <?php
+require_once get_template_directory() . '/inc/post_types.php';
 
 // Регистрирую скрипты
 function donehq_enqueue_scripts()
