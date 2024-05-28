@@ -62,6 +62,8 @@
                 }
                 ?>
             </div>
+
+
         </div>
         <?php
         $template_directory_uri = get_template_directory_uri();
