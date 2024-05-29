@@ -19,13 +19,9 @@ get_header();
 ?>
 
 <main class="main">
-
-    <?php
-    if (function_exists('yoast_breadcrumb'))
-    {
-        yoast_breadcrumb('<div class="breadcrumbs">', '</div>');
-    }
-    ?>
+    <?php if (function_exists('yoast_breadcrumb')) : ?>
+        <div class="breadcrumbs"><?php yoast_breadcrumb(); ?></div>
+    <?php endif; ?>
 
     <section class="common-hero">
         <div class="container">
@@ -38,61 +34,28 @@ get_header();
         <div class="container">
             <div class="contact__inner">
 
+                <?php $footer_phone = get_field('footer_phone', 'option'); ?>
 
-                <?php
-                // Получить значение поля "footer_phone" из страницы опций
-                $footer_phone = get_field('footer_phone', 'option');
+                <?php if ($footer_phone) : ?>
+                    <a id="w-node-_006635a8-a843-090c-9039-bd6d28ce1c36-fcacf474" href="tel:<?php echo esc_attr(preg_replace('/[^\d+]/', '', $footer_phone)); ?>" class="contact__item item--dark-blue w-inline-block">
+                        <div class="heading">Call Us</div>
+                        <div class="contact__item-text"><?php echo esc_html($footer_phone); ?></div>
+                    </a>
+                <?php endif; ?>
 
-                // Проверить и вывести значение
-                if ($footer_phone)
-                {
-                    // Удалить все символы, кроме цифр и знака плюса
-                    $phone_sanitized = preg_replace('/[^\d+]/', '', $footer_phone);
-                    echo '<a id="w-node-_006635a8-a843-090c-9039-bd6d28ce1c36-fcacf474" href="tel:' . esc_html($phone_sanitized) . '" class="contact__item item--dark-blue w-inline-block">
-            <div class="heading">Call Us</div>
-            <div class="contact__item-text"> ' . esc_html($footer_phone) . '</div>
-          </a>';
-                }
-                ?>
-
-
-
-
-
-
-
-
-                <?php
-                // Получить значение поля "footer_email" из страницы опций
-                $footer_email = get_field('footer_email', 'option');
-
-                // Проверить и вывести значение
-                if ($footer_email)
-                {
-                    echo '
-          <a id="w-node-c5a05dc7-3064-99c6-8e3f-2e512c10319a-fcacf474" href="mailto:' . esc_html($footer_email) . '" class="contact__item item--dark-blue w-inline-block">
-            <div class="heading">Mail Us</div>
-            <div class="contact__item-text">' . esc_html($footer_email) . '</div>
-          </a>
-          ';
-                }
-                ?>
-
-
-                <?php
-                // Получить значение поля "footer_adresss" из страницы опций
-                $footer_address = get_field('footer_address', 'option');
-
-                // Проверить и вывести значение
-                if ($footer_address)
-                {
-                    echo ' 
-          <a id="w-node-f8352fe8-9b5a-6521-6fd7-6d26f02deb88-fcacf474" href="https://www.google.ru/maps/place/1655+Barclay+Blvd,+Buffalo+Grove,+IL+60089,+USA/@42.1804581,-87.9411633,15z/data=!4m6!3m5!1s0x880fbc2a82e607a9:0xfce2cc45d23f95c1!8m2!3d42.1802676!4d-87.9333618!16s%2Fg%2F11c21jymwm?entry=ttu" target="_blank" class="contact__item item--dark-blue w-inline-block">
-            <div class="heading">Find Us</div>
-            <div class="contact__item-text">' . esc_html($footer_address) . '</div><img src="' .  get_template_directory_uri()  . ' /images/geo-icon.svg" loading="lazy" alt="" class="contact__item-geo-icon">
-          </a>';
-                }
-                ?>
+                <?php if ($footer_email = get_field('footer_email', 'option')) : ?>
+                    <a id="w-node-c5a05dc7-3064-99c6-8e3f-2e512c10319a-fcacf474" href="mailto:<?php echo esc_html($footer_email); ?>" class="contact__item item--dark-blue w-inline-block">
+                        <div class="heading">Mail Us</div>
+                        <div class="contact__item-text"><?php echo esc_html($footer_email); ?></div>
+                    </a>
+                <?php endif; ?>
+                <?php if ($footer_address = get_field('footer_address', 'option')) : ?>
+                    <a id="w-node-f8352fe8-9b5a-6521-6fd7-6d26f02deb88-fcacf474" href="https://www.google.ru/maps/place/<?php echo esc_attr($footer_address); ?>/@42.1804581,-87.9411633,15z/data=!4m6!3m5!1s0x880fbc2a82e607a9:0xfce2cc45d23f95c1!8m2!3d42.1802676!4d-87.9333618!16s%2Fg%2F11c21jymwm?entry=ttu" target="_blank" class="contact__item item--dark-blue w-inline-block">
+                        <div class="heading">Find Us</div>
+                        <div class="contact__item-text"><?php echo esc_html($footer_address); ?></div>
+                        <img src="<?php echo get_template_directory_uri() ?>/images/geo-icon.svg" loading="lazy" alt="" class="contact__item-geo-icon">
+                    </a>
+                <?php endif; ?>
 
                 <?php if (have_rows('contact_items')) : ?>
                     <?php

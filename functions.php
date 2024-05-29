@@ -125,6 +125,8 @@ function end_buffer()
 }
 add_action('wp_footer', 'end_buffer');
 
+// Включаем поддержку миниатюр для постов и страниц
+add_theme_support('post-thumbnails');
 
 // добавляю опшенс
 if (function_exists('acf_add_options_page'))

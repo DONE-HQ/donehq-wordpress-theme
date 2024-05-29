@@ -503,3 +503,20 @@ path.logo-spinner--symbol {
   min-height: auto;
   overflow: hidden;
 }
+
+.article-list__item-author-photo {
+  border-radius: 50%;
+}
+
+
+.bg-dark {
+  background-color: var(--color--white);
+  color: #252525;
+}
+
+@media screen and (max-width: 767px) {
+  .bg-dark {
+    background-color: var(--color--primary-blue);
+    color: var(--color--white);
+  }
+}

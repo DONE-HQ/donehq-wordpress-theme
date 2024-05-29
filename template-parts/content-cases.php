@@ -50,24 +50,26 @@
             </h3>
             <div class="cases__item-text">
                 <?php
-                // Получаем список терминов из кастомной таксономии для текущего поста
-                $terms = get_the_terms(get_the_ID(), 'case-category');
+                // Get the featured image ID for the current post
+                $featured_image_id = get_post_thumbnail_id();
 
-                // Если термины существуют
-                if ($terms && !is_wp_error($terms))
+                // Check if a featured image is set
+                if ($featured_image_id)
                 {
-                    $first_term = reset($terms); // Получаем первый термин из списка
-                    // Выводим первую категорию
-                    echo '<span class="cases__item-tag">' . esc_html($first_term->name) . '</span>';
+                    // Get the first category for the current post
+                    $categories = get_the_category();
+                    $first_category = reset($categories);
+
+                    // Display the first category and the featured image
+                    echo '<span class="cases__item-tag">' . esc_html($first_category->name) . '</span>';
+                    echo wp_get_attachment_image($featured_image_id, 'thumbnail');
                 }
                 ?>
             </div>
-
-
         </div>
         <?php
         $template_directory_uri = get_template_directory_uri();
-        echo '<img src="' . esc_url($template_directory_uri) . '/images/Icons.svg" loading="lazy" data-arrow-rotated="" alt="" class="cases__item-bot-arrow">';
+        echo '<img src="' . esc_url($template_directory_uri . '/images/Icons.svg') . '" loading="lazy" data-arrow-rotated="" alt="" class="cases__item-bot-arrow">';
         ?>
     </div>
 </a>
