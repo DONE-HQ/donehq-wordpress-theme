@@ -37,7 +37,7 @@ get_header();
                             {
                                 // Создаем ссылку на архивную страницу для данной категории
                                 $category_link = get_term_link($category);
-                                echo '<a href="' . esc_url($category_link) . '" class="cat-link c-' . $counter . '" data-category="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</a>';
+                                echo '<a href="' . esc_url($category_link) . '" class="cat-link c-' . $counter . '" >' . esc_html($category->name) . '</a>';
                                 $counter++; // Увеличиваем счетчик
                             }
                         }
