@@ -18,10 +18,12 @@ get_header();
 
 ?>
 <main class="main">
-    <div data-css="scrollbar-none" class="breadcrumbs"><a href="/" class="breadcrumbs__item">Home</a>
-        <div class="breadcrumbs__sep">&gt;</div>
-        <div class="breadcrumbs__item item--active">Blog</div>
-    </div>
+    <?php
+    if (function_exists('yoast_breadcrumb'))
+    {
+        yoast_breadcrumb('<div class="breadcrumbs">', '</div>');
+    }
+    ?>
     <section class="common-hero hero--blog">
         <div class="container">
             <div class="common-hero__content">
