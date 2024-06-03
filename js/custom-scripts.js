@@ -113,3 +113,32 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial call to set up the headers links
   createHeadersLink();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var navLinks = document.querySelectorAll('.article__aside-h2-list a');
+
+    function makeActive() {
+        var fromTop = window.scrollY + 350; // Учитываем 50 пикселей скролла вниз
+
+        navLinks.forEach(function(link) {
+            var section = document.querySelector(link.getAttribute('href'));
+
+            if (
+                section.offsetTop <= fromTop &&
+                section.offsetTop + section.offsetHeight > fromTop
+            ) {
+                navLinks.forEach(function(link) {
+                    link.classList.remove('active');
+                });
+
+                link.classList.add('active');
+            }
+        });
+    }
+
+    makeActive();
+
+    document.addEventListener('scroll', makeActive);
+});
+
+

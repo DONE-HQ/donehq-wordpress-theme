@@ -140,3 +140,38 @@ if (function_exists('acf_add_options_page'))
         'redirect'      => false
     ));
 }
+
+
+function add_ids_and_collect_h2_tags($content)
+{
+    if (is_single())
+    { // Проверяем, является ли текущая страница односторонней
+        $dom = new DOMDocument();
+        // Подавляем предупреждения о некорректной структуре HTML
+        libxml_use_internal_errors(true);
+        $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'));
+        libxml_clear_errors();
+
+        $h2_tags = $dom->getElementsByTagName('h2');
+        $headers = array();
+        $counter = 0;
+
+        foreach ($h2_tags as $h2)
+        {
+            $id = 'header-' . $counter;
+            $h2->setAttribute('id', $id);
+            $headers[] = array('id' => $id, 'text' => $h2->textContent);
+            $counter++;
+        }
+
+        $GLOBALS['h2_headers'] = $headers; // Сохраняем заголовки в глобальной переменной
+
+        return $dom->saveHTML($dom->documentElement);
+    }
+    else
+    {
+        return $content; // Возвращаем исходный контент для всех других страниц
+    }
+}
+
+add_action('the_content', 'add_ids_and_collect_h2_tags');

@@ -68,7 +68,7 @@ get_header();
                     <?php if (have_posts()) : ?>
                         <?php while (have_posts()) : the_post(); ?>
                             <div role="listitem" class="article-list__item w-dyn-item">
-                                <a class="article-list__item-inner" href="<?php the_permalink(); ?>" data-article="link">
+                                <a class="article-list__item-inner" href="<?php the_permalink(); ?>">
                                     <div class="article-list__item-photo-wrap">
                                         <?php if (has_post_thumbnail()) : ?>
                                             <?php the_post_thumbnail('full', ['class' => 'article-list__item-photo', 'loading' => 'lazy']); ?>

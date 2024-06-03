@@ -1,10 +1,12 @@
+<?php
+
 /**
-* Template Name: FAQ
-*
-* @package WordPress
-* @subpackage DoneHQ
-* @since DoneHQ
-*/
+ * Template Name: FAQ
+ *
+ * @package WordPress
+ * @subpackage DoneHQ
+ * @since DoneHQ
+ */
 
 ?>
 <?php
