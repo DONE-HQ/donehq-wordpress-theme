@@ -543,6 +543,20 @@ path.logo-spinner--symbol {
   margin-bottom: .5em;
 }
 
+.h-points__item:hover .h-points__item-img {
+  opacity: 1;
+}
+
+.h-points__item:hover .h-points__item-toggle-wrap {
+  /* justify-content: flex-end; */
+  border-color: var(--color--white);
+}
+
+.h-points__item:hover .h-points__item-toggle {
+  transform: translate(3.5em, 0px);
+  background-color: var(--color--white);
+}
+
 @media screen and (max-width: 767px) {
   .bg-dark {
     background-color: var(--color--primary-blue);

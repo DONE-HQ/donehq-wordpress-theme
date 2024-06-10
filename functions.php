@@ -7,6 +7,7 @@ function donehq_enqueue_scripts()
     wp_enqueue_style('normalize-style', get_template_directory_uri() . '/css/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('components-style', get_template_directory_uri() . '/css/components.css', array(), '1.0', 'all');
     wp_enqueue_style('donehq-2-style', get_template_directory_uri() . '/css/donehq-2.css', array(), '1.0', 'all');
+    wp_enqueue_style('donehq-3-style', get_template_directory_uri() . '/css/donehq-2.webflow.ee123651c.min.css', array(), '1.0', 'all');
     wp_enqueue_script('main-script', get_template_directory_uri() . '/js/donehq-2.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'donehq_enqueue_scripts');
@@ -175,3 +176,17 @@ function add_ids_and_collect_h2_tags($content)
 }
 
 add_action('the_content', 'add_ids_and_collect_h2_tags');
+
+
+
+
+// Отключение автоматического добавления <p> и <br> для конкретного поля ACF
+function disable_wpautop_for_section_text($value, $post_id, $field)
+{
+    if ($field['name'] === 'section_text')
+    {
+        remove_filter('acf_the_content', 'wpautop');
+    }
+    return $value;
+}
+add_filter('acf/load_value', 'disable_wpautop_for_section_text', 10, 3);
