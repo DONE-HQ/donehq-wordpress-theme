@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: FAQ
+ * Template Name: Front Page
  *
  * @package WordPress
  * @subpackage DoneHQ
@@ -22,23 +22,16 @@ get_header(); ?>
     $hero_title = get_field('hero_title');
     $hero_subtitle = get_field('hero_subtitle');
     $hero_description = get_field('hero_description');
-    $hero_contact_button_text = get_field('hero_contact_button_text');
-    $hero_contact_button_link = get_field('hero_contact_button_link');
-    $hero_case_studies_button_text = get_field('hero_case_studies_button_text');
-    $hero_case_studies_button_link = get_field('hero_case_studies_button_link'); ?>
+    $hero_contact_button_text = get_field('hero_button_text'); ?>
 
     <section class="h-hero">
         <div class="container">
             <div class="h-hero__content">
-                <h1 class="h-hero__title"><?php echo esc_html($hero_title); ?></h1>
-                <h1 class="h-hero__subtitle"><?php echo esc_html($hero_subtitle); ?></h1>
+                <h1 data-w-id="c86ed5bc-86a7-d530-e7de-0644c9430db6" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="h-hero__title"><span data-animation="star-rotated" class="hero__title-span-star" style="animation-play-state: running;">&nbsp;</span> <?php echo esc_html($hero_title); ?></h1>
                 <div class="hero__text-wrap">
                     <div class="text"><?php echo esc_html($hero_description); ?></div>
                 </div>
-                <div class="hero__btns-wrap">
-                    <a href="<?php echo esc_url($hero_contact_button_link); ?>" class="btn btn--blue w-button"><?php echo esc_html($hero_contact_button_text); ?></a>
-                    <a href="<?php echo esc_url($hero_case_studies_button_link); ?>" class="btn btn--border-blue w-button"><?php echo esc_html($hero_case_studies_button_text); ?></a>
-                </div>
+                <div data-w-id="d8cddc18-aff8-b3ad-d335-550fab813727" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="hero__btns-wrap"><a href="#" data-modal-open="calendly" class="btn btn--blue w-button"><?php echo esc_html($hero_contact_button_text); ?></a></div>
                 <!-- Здесь может быть ваша интеграция с Matter.js или другими библиотеками для canvas -->
                 <div data-matter="hero" class="h-hero__frames">
                     <!-- Canvas placeholder -->
@@ -46,24 +39,9 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <section data-w-id="fa596059-cdcd-9209-d56f-a48a56b58ae5" class="h-integrated">
-        <div class="container">
-            <div class="h-integrated__content">
-                <?php if (get_field('section_text')) : ?>
-                    <?php the_field('section_text'); ?>
-                <?php endif; ?>
 
-                <?php
-                $button_link = get_field('button_link');
-                $button_text = get_field('button_text');
-                if ($button_link && $button_text) : ?>
-                    <a href="<?php echo esc_url($button_link); ?>" class="btn btn--blue w-button"><?php echo esc_html($button_text); ?></a>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
 
-    <section class="h-ask">
+    <!-- <section class="h-ask">
         <div class="container">
             <div class="h-ask__content">
                 <div class="h-ask__content-inner">
@@ -95,7 +73,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="h-points">
         <div class="container">
@@ -132,7 +110,22 @@ get_header(); ?>
         </div>
     </section>
 
+    <section data-w-id="fa596059-cdcd-9209-d56f-a48a56b58ae5" class="h-integrated">
+        <div class="container">
+            <div class="h-integrated__content">
+                <?php if (get_field('section_text')) : ?>
+                    <?php the_field('section_text'); ?>
+                <?php endif; ?>
 
+                <?php
+                $button_link = get_field('button_link');
+                $button_text = get_field('button_text');
+                if ($button_text) : ?>
+                    <a href="#" data-modal-open="calendly" class="btn btn--blue w-button"><?php echo esc_html($button_text); ?></a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
     <section id="services" data-w-id="dc5446ba-8a42-f554-8f65-c78ba2541285" class="h-services">
         <div class="container">
             <div class="h-services__content">
@@ -155,7 +148,7 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <section id="cases" data-w-id="9a2a656d-968e-be27-d756-f37160ec5e36" class="h-cases">
+    <section id="cases" class="h-cases">
         <div class="container">
             <div class="h-cases__content">
                 <div id="w-node-cc5d46ec-44ff-2661-3a5f-3600a1e8501b-76ea5dc5" class="css w-embed">
@@ -182,75 +175,237 @@ get_header(); ?>
                     </style>
                 </div>
                 <div class="h-services__title-mobile-wrap">
-                    <h2 class="h-title-mobile">We helped our clients to get stable growth of leads each month, increase revenue by 3 times faster and save over $10,000 on hiring and onboarding new employees and up to 3 months on building processes.</h2>
+                    <h2 class="h-title-mobile">Discover our most recent
+                        projects
+                    </h2>
                 </div>
                 <div data-desktop="" class="title-animated-wrap wrap--services">
                     <div class="animated__title-line line--1">
-                        <h2 class="home-title">We helped our clients to get stable</h2>
-                        <h2 data-w-id="e5ba9dc7-5a7c-0754-30b5-51cd93f17f1f" class="home-title title--reveal" style="will-change: width, height; width: 0%;">We helped our clients to get stable</h2>
+                        <h2 class="home-title">Discover our most recent
+                        </h2>
+                        <h2 data-w-id="e5ba9dc7-5a7c-0754-30b5-51cd93f17f1f" class="animated-title title--reveal" style="will-change: width, height; width: 94.895%;">Discover our most recent</h2>
                     </div>
                     <div class="animated__title-line line--2">
-                        <h2 class="home-title">growth of <span class="span--red">leads each month</span>,</h2>
-                        <h2 data-w-id="138869a6-7fcc-e904-69e5-146f4c9a4aa9" class="home-title title--reveal" style="will-change: width, height; width: 0%;">growth of <span class="span--red">leads each month</span>,</h2>
+                        <h2 class="animated-title">projects</h2>
+                        <h2 data-w-id="138869a6-7fcc-e904-69e5-146f4c9a4aa9" class="animated-title title--reveal" style="will-change: width, height; width: 0%;">projects</h2>
                     </div>
-                    <div class="animated__title-line line--3">
-                        <h2 class="home-title">increase revenue by 3 times faster</h2>
-                        <h2 data-w-id="120bcfea-5bb5-5a4f-37f1-64a5ff61269b" class="home-title title--reveal" style="will-change: width, height; width: 0%;">increase revenue by 3 times faster</h2>
-                    </div>
-                    <div class="animated__title-line line--4">
-                        <h2 class="home-title">and <span class="span--blue">save over $10,000</span> on hiring</h2>
-                        <h2 data-w-id="92c90c12-6763-8957-a75b-b92c8313513d" class="home-title title--reveal" style="will-change: width, height; width: 0%;">and <span class="span--blue">save over $10,000</span> on hiring</h2>
-                    </div>
-                    <div class="animated__title-line line--5">
-                        <h2 class="home-title">and onboarding <span class="span--green">new employees</span></h2>
-                        <h2 data-w-id="4f7d0eeb-941b-0c5c-ab14-fa1f8293825d" class="home-title title--reveal" style="will-change: width, height; width: 0%;">and onboarding <span class="span--green">new employees</span></h2>
-                    </div>
-                    <div class="animated__title-line line--6">
-                        <h2 class="home-title">and up to 3 months on building</h2>
-                        <h2 data-w-id="eba4d1a0-fda9-08df-320c-05e776093cf5" class="home-title title--reveal" style="will-change: width, height; width: 0%;">and up to 3 months on building</h2>
-                    </div>
-                    <div class="animated__title-line line--6">
-                        <h2 class="home-title">processes.</h2>
-                        <h2 data-w-id="354f8603-f557-1c03-c490-2e53b6ca5c02" class="home-title title--reveal" style="will-change: width, height; width: 0%;">processes.</h2>
-                    </div>
+
                 </div>
                 <div class="h-cases__list">
                     <?php if (have_rows('cases')) : ?>
-                        <?php while (have_rows('cases')) : the_row(); ?>
-                            <?php
-                            $case_permalink = get_sub_field('case_permalink');
-                            $case_logo = get_sub_field('case_logo');
-                            $case_image = get_sub_field('case_image');
+                        <?php
+                        $counter = 1; // Инициализируем счетчик
+                        while (have_rows('cases')) : the_row();
                             $case_title = get_sub_field('case_title');
-                            $case_text = get_sub_field('case_text');
-                            $case_category = get_sub_field('case_category');
-                            ?>
-                            <a data-css="btn-arrow" href="<?php echo esc_url($case_permalink); ?>" class="h-cases__item w-inline-block">
-                                <div class="h-cases__item-top">
-                                    <?php if ($case_logo) : ?>
-                                        <img src="<?php echo esc_url($case_logo['url']); ?>" loading="lazy" alt="<?php echo esc_attr($case_logo['alt']); ?>" class="h-cases__item-logo">
-                                    <?php endif; ?>
-                                    <?php if ($case_image) : ?>
-                                        <img data-css="hover-hide" class="h-cases__item-img" src="<?php echo esc_url($case_image['url']); ?>" alt="<?php echo esc_attr($case_image['alt']); ?>" loading="lazy">
-                                    <?php endif; ?>
-                                    <div class="h-cases__item-overlay"></div>
-                                </div>
-                                <div class="h-cases__item-bot">
-                                    <div class="h-cases__item-content">
-                                        <h3 class="cases__item-title"><?php echo esc_html($case_title); ?></h3>
-                                        <div class="cases__item-text"><?php echo esc_html($case_category); ?></div>
+                            $case_link = get_sub_field('case_link');
+                            $case_image = get_sub_field('case_image');
+                            // $case_logo = get_sub_field('case_logo');
+                            $case_description = get_sub_field('case_description');
+                        ?>
+                            <div class="h-cases__item-<?php echo $counter; ?>">
+                                <a data-css="btn-arrow" href="<?php echo esc_url($case_link['url']); ?>" class="h-cases__item w-inline-block">
+                                    <div class="h-cases__item-top">
+                                        <img class="h-cases__item-img" src="<?php echo esc_url($case_image['url']); ?>" alt="" loading="lazy">
+                                        <!-- <div class="h-cases__item-overlay"></div> -->
                                     </div>
-                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/Icons.svg'); ?>" loading="lazy" data-arrow-rotated="" alt="" class="h-cases__item-bot-arrow">
-                                </div>
-                            </a>
+                                    <div class="h-cases__item-bot">
+                                        <div class="h-cases__item-content">
+                                            <h3 class="cases__item-title"><?php echo esc_html($case_title); ?></h3>
+                                            <div class="cases__item-text"><?php echo esc_html($case_description); ?></div>
+                                        </div>
+                                        <?php
+                                        $template_directory_uri = get_template_directory_uri();
+                                        echo '<img src="' . esc_url($template_directory_uri . '/images/6669f342562441d53ec54039_Icons.svg') . '" loading="lazy" data-arrow-rotated="" alt="" class="h-cases__item-bot-arrow">';
+                                        ?>
+                                    </div>
+                                </a>
+                            </div>
+                            <?php $counter++; // Увеличиваем счетчик 
+                            ?>
                         <?php endwhile; ?>
-                    <?php else : ?>
-                        <p>No cases found</p>
                     <?php endif; ?>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <?php
+    if (have_rows('top_logos_row') || have_rows('bottom_logos_row')) : ?>
+        <section data-css="overflow-hidden" data-w-id="bed6adee-a7fd-d361-0b3b-75922629b27c" class="h-logos">
+            <div class="container">
+                <div class="logos">
+                    <div class="logos__title-wrap">
+                        <h2 class="h-title-mobile ta-center">Clients</h2>
+                    </div>
+                    <div class="title-animated-wrap wrap--logos">
+                        <div class="animated__title-line line--1">
+                            <h2 class="animated-title ta-center">Clients</h2>
+                            <h2 data-w-id="dcad57ee-2ead-3369-7148-9bd7e3a31d32" class="animated-title title--reveal" style="will-change: width, height; width: 38.312%;">Clients</h2>
+                        </div>
+                    </div>
+                    <div class="logos__lines">
+                        <div data-animation="logo-scroll" class="logos__line-top-wrap">
+                            <div data-logos="" class="logos__line-top" style="animation-play-state: paused;">
+                                <?php if (have_rows('top_logos_row')) : while (have_rows('top_logos_row')) : the_row(); ?>
+                                        <div class="logos__item">
+                                            <img src="<?php the_sub_field('logo_image'); ?>" loading="eager" alt="" class="logos__item-img">
+                                        </div>
+                                <?php endwhile;
+                                endif; ?>
+                            </div>
+                            <div data-logos="" class="logos__line-top" style="animation-play-state: paused;">
+                                <?php if (have_rows('top_logos_row')) : while (have_rows('top_logos_row')) : the_row(); ?>
+                                        <div class="logos__item">
+                                            <img src="<?php the_sub_field('logo_image'); ?>" alt="" class="logos__item-img">
+                                        </div>
+                                <?php endwhile;
+                                endif; ?>
+                            </div>
+                            <div data-logos="" class="logos__line-top" style="animation-play-state: paused;">
+                                <?php if (have_rows('top_logos_row')) : while (have_rows('top_logos_row')) : the_row(); ?>
+                                        <div class="logos__item">
+                                            <img src="<?php the_sub_field('logo_image'); ?>" alt="" class="logos__item-img">
+                                        </div>
+                                <?php endwhile;
+                                endif; ?>
+                            </div>
+                        </div>
+                        <div data-animation="logo-scroll" class="logos__line-bot-wrap">
+                            <div data-logos="" class="logos__line-bot" style="animation-play-state: paused;">
+                                <?php if (have_rows('bottom_logos_row')) : while (have_rows('bottom_logos_row')) : the_row(); ?>
+                                        <div class="logos__item">
+                                            <img src="<?php the_sub_field('logo_image'); ?>" loading="lazy" alt="" class="logos__item-img">
+                                        </div>
+                                <?php endwhile;
+                                endif; ?>
+                            </div>
+                            <div data-logos="" class="logos__line-bot" style="animation-play-state: paused;">
+                                <?php if (have_rows('bottom_logos_row')) : while (have_rows('bottom_logos_row')) : the_row(); ?>
+                                        <div class="logos__item">
+                                            <img src="<?php the_sub_field('logo_image'); ?>" loading="lazy" alt="" class="logos__item-img">
+                                        </div>
+                                <?php endwhile;
+                                endif; ?>
+                            </div>
+                            <div data-logos="" class="logos__line-bot" style="animation-play-state: paused;">
+                                <?php if (have_rows('bottom_logos_row')) : while (have_rows('bottom_logos_row')) : the_row(); ?>
+                                        <div class="logos__item">
+                                            <img src="<?php the_sub_field('logo_image'); ?>" loading="lazy" alt="" class="logos__item-img">
+                                        </div>
+                                <?php endwhile;
+                                endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+    <section data-w-id="8a92973d-b8ba-b2b0-c8ff-2d46ef56021d" class="h-feedback">
+        <div class="container">
+            <div class="feedback">
+                <div class="feedback__title-wrap">
+                    <h2 class="h-title-mobile ta-center"><span class="feedback__title-span-icon-2">&nbsp;</span>&nbsp;<span class="span--red">Our efforts</span> have consistently thrilled our clients, leading them to share their enthusiastic<br><span class="feedback__title-span-icon-1">&nbsp;</span>&nbsp;<span class="span--green">feedback</span> through thoughtful reviews</h2>
+                </div>
+                <div class="title-animated-wrap wrap--feedback">
+                    <div class="animated__title-line">
+                        <h2 class="animated-title"><span class="feedback__title-span-icon-2">&nbsp;</span>&nbsp;<span class="span--red">Our efforts</span> have consistently</h2>
+                        <h2 data-w-id="13bc72c9-d792-85de-94bd-91475d989c2e" class="animated-title title--reveal" style="will-change: width, height; width: 0%;"><span class="feedback__title-span-icon-2">&nbsp;</span>&nbsp;<span class="span--red">Our efforts</span> have consistently</h2>
+                    </div>
+                    <div class="animated__title-line line--1">
+                        <h2 class="animated-title">thrilled our clients, leading them </h2>
+                        <h2 data-w-id="da4f8bbb-c25a-ca2b-f9e4-d039c2fadc05" class="animated-title title--reveal" style="will-change: width, height; width: 0%;">thrilled our clients, leading them </h2>
+                    </div>
+                    <div class="animated__title-line line--1">
+                        <h2 class="animated-title">to share their enthusiastic</h2>
+                        <h2 data-w-id="85342287-48e5-712c-526d-0264b7caede3" class="animated-title title--reveal" style="will-change: width, height; width: 0%;">to share their enthusiastic</h2>
+                    </div>
+                    <div class="animated__title-line line--1">
+                        <h2 class="animated-title"><span class="feedback__title-span-icon-1">&nbsp;</span>&nbsp;<span class="span--green">feedback</span> through thoughtful</h2>
+                        <h2 data-w-id="84968083-d713-1620-4f8d-0ba2e7184868" class="animated-title title--reveal" style="will-change: width, height; width: 0%;"><span class="feedback__title-span-icon-1">&nbsp;</span>&nbsp;<span class="span--green">feedback</span> through thoughtful</h2>
+                    </div>
+                    <div class="animated__title-line line--1">
+                        <h2 class="animated-title">reviews</h2>
+                        <h2 data-w-id="c2ef8f0d-2bf8-41d3-69d6-cf9d986f10a3" class="animated-title title--reveal" style="will-change: width, height; width: 0%;">reviews</h2>
+                    </div>
+                </div>
+                <div class="feedback__list">
+                    <div class="feedback__item">
+                        <div class="feedback__item-photo-wrap"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/66674531b464e62b47252e4c_feedback-photo-1.jpg" loading="lazy" sizes="(max-width: 767px) 92vw, 30vw" srcset="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/66674531b464e62b47252e4c_feedback-photo-1-p-500.jpg 500w, https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/66674531b464e62b47252e4c_feedback-photo-1-p-800.jpg 800w, https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/66674531b464e62b47252e4c_feedback-photo-1.jpg 1168w" alt="" class="feedback__item-photo"></div>
+                        <div data-feedback="wrap" class="feedback__item-content">
+                            <div class="feedback__item-texts">
+                                <div class="feedback__item-heading-wrap">
+                                    <h3 class="feedback__item-heading">YourCMO</h3>
+                                    <div class="feedback__item-subheading">Rich Taylor<br><span class="span--op70">Fractional CMO</span></div>
+                                </div>
+                                <div data-feedback="text" class="feedback__item-text text--hide">Alex and the team at Done HQ have done a great job supporting my clients. They are collaborative, tech savvy, and practical minded. I count on them for website development support and they serve as a trusted partner helping tackle the many challenges involved in creating an efficient and&nbsp;effective user experience.</div>
+                            </div>
+                            <div data-feedback="trigger" class="feedback__trigger-wrap"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/65fb2d744558f90976ea5de7_line.svg" loading="lazy" alt="" class="feedback__trigger"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/65fb2d744558f90976ea5de7_line.svg" loading="lazy" data-feedback="btn-rotate" alt="" class="feedback__trigger open"></div>
+                        </div>
+                    </div>
+                    <div class="feedback__item item--2">
+                        <div class="feedback__item-photo-wrap"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/65fb2d744558f90976ea5e73_Frame%20528.jpg" loading="lazy" sizes="(max-width: 767px) 92vw, 30vw" srcset="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/65fb2d744558f90976ea5e73_Frame%2520528-p-500.jpg 500w, https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/65fb2d744558f90976ea5e73_Frame%20528.jpg 876w" alt="" class="feedback__item-photo"></div>
+                        <div data-feedback="wrap" class="feedback__item-content">
+                            <div class="feedback__item-texts">
+                                <div class="feedback__item-heading-wrap">
+                                    <h3 class="feedback__item-heading">BioWave</h3>
+                                    <div class="feedback__item-subheading">Ania Kuniej<br><span class="span--op70">Director of Marketing</span></div>
+                                </div>
+                                <div data-feedback="text" class="feedback__item-text text--hide">Over the past two years working with DONE HQ, our experience has been outstanding. They helped us launch a new website that perfectly embodies our brand and is optimized for SEO, marking a significant upgrade in our online presence. Their involvement extended to developing landing pages for our marketing campaigns, showcasing their ability to deliver high-quality work promptly.<br>What distinguishes DONE HQ is their responsiveness and flexibility, quickly adapting to our requests and implementing changes efficiently. The team's friendly and straightforward communication style has made our collaboration seamless and highly productive. In short, DONE HQ has been an invaluable partner in enhancing our digital strategy and execution. Their commitment to quality, timeliness, and client service has made a tangible impact on our business. I highly recommend DONE HQ for anyone looking to boost their online marketing efforts.</div>
+                            </div>
+                            <div data-feedback="trigger" class="feedback__trigger-wrap"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/65fb2d744558f90976ea5de7_line.svg" loading="lazy" alt="" class="feedback__trigger"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/65fb2d744558f90976ea5de7_line.svg" loading="lazy" data-feedback="btn-rotate" alt="" class="feedback__trigger open"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <section id="consultation" data-w-id="608ffed6-a747-b2b9-3dae-e3c50b857597" class="h-consultation">
+        <div class="container">
+            <div class="consultation">
+                <div class="consultation__title-wrap">
+                    <h2 class="h-title-mobile"><?php the_field('consultation_title'); ?></h2>
+                </div>
+                <div id="w-node-_608ffed6-a747-b2b9-3dae-e3c50b8575a6-0b857597" class="title-animated-wrap wrap--consultation">
+                    <div class="animated__title-line line--1">
+                        <h2 class="animated-title">Arrange a <span class="span--red">consultation</span> with </h2>
+                        <h2 data-w-id="608ffed6-a747-b2b9-3dae-e3c50b8575ad" class="animated-title title--reveal" style="will-change: width, height; width: 100%;">Arrange a <span class="span--red">consultation</span> with </h2>
+                    </div>
+                    <div class="animated__title-line line--1">
+                        <h2 class="animated-title">team to explore dynamic</h2>
+                        <h2 data-w-id="608ffed6-a747-b2b9-3dae-e3c50b8575b5" class="animated-title title--reveal" style="will-change: width, height; width: 62.726%;">team to explore dynamic</h2>
+                    </div>
+                    <div class="animated__title-line line--1">
+                        <h2 class="animated-title">strategies for <span class="span--blue">boosting </span></h2>
+                        <h2 data-w-id="608ffed6-a747-b2b9-3dae-e3c50b8575bc" class="animated-title title--reveal" style="will-change: width, height; width: 0%;">strategies for <span class="span--blue">boosting </span></h2>
+                    </div>
+                    <div class="animated__title-line line--1">
+                        <h2 class="animated-title"><span class="span--blue">revenue</span> and reducing costs</h2>
+                        <h2 data-w-id="608ffed6-a747-b2b9-3dae-e3c50b8575c5" class="animated-title title--reveal" style="will-change: width, height; width: 0%;"><span class="span--blue">revenue</span> and reducing costs</h2>
+                    </div>
+                </div>
+                <img class="consultation__img" src="<?php the_field('consultation_image_desktop'); ?>" alt="" sizes="(max-width: 767px) 100vw, (max-width: 3789px) 38vw, 1440px" data-desktop="" id="w-node-ef813bf4-77a1-90e5-44c6-0cc3032b4af2-0b857597" loading="lazy">
+                <img class="consultation__img" src="<?php the_field('consultation_image_mobile'); ?>" data-mobile="" alt="" sizes="(max-width: 479px) 100vw, (max-width: 767px) 92vw, 100vw" id="w-node-c551fd66-c476-a6d1-ff6c-75d13cc22572-0b857597" loading="lazy">
+                <div id="w-node-_608ffed6-a747-b2b9-3dae-e3c50b8575c9-0b857597" class="consultation__form w-form">
+                    <form method="get" name="wf-form-consultration" data-name="consultration" data-wf-page-id="65fb2d744558f90976ea5dc5" data-wf-element-id="608ffed6-a747-b2b9-3dae-e3c50b8575ca" aria-label="consultration">
+                        <div class="form__inputs"><input class="input w-input" maxlength="256" name="name" data-name="name" placeholder="Your Name *" type="text" required=""><input class="input w-input" maxlength="256" name="email" data-name="email" placeholder="Your Email *" type="email" required=""></div><button data-css="btn-arrow" type="submit" class="btn btn--blue btn--consultation">
+                            <div>Send</div><img data-arrow-move="" loading="lazy" alt="" src="https://cdn.prod.website-files.com/65ca48647f3eeedb29f339ad/65caa14408754eab01abcef2_arrow-right-white.svg" class="btn__arrow hide">
+                        </button>
+                        <div data-lastpass-icon-root="" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div>
+                    </form>
+                    <div class="consultation__success-wrap w-form-done" tabindex="-1" role="region" aria-label="consultration success">
+                        <div class="schedule__success">
+                            <div>Thank you! Your submission has been&nbsp;received!</div>
+                        </div>
+                    </div>
+                    <div class="w-form-fail" tabindex="-1" role="region" aria-label="consultration failure">
+                        <div>Oops! Something went wrong while submitting the form.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </main>
 <?php
 get_footer();

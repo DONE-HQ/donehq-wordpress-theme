@@ -557,6 +557,10 @@ path.logo-spinner--symbol {
   background-color: var(--color--white);
 }
 
+.h-cases__item:hover .h-cases__item-bot-arrow {
+  transform: rotate(0deg);
+}
+
 @media screen and (max-width: 767px) {
   .bg-dark {
     background-color: var(--color--primary-blue);
