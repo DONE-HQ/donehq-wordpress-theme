@@ -173,31 +173,41 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="h-benefits__blocks">
-                    <?php if (have_rows('benefits_items')) : $counter = 1; ?>
-                        <?php while (have_rows('benefits_items')) : the_row();
-                            $arrow_image_black = get_sub_field('arrow_image_black');
-                            $arrow_image_white = get_sub_field('arrow_image_white');
-                            $title = get_sub_field('title');
-                            $description = get_sub_field('description');
-                            $custom_class = 'item--' . $counter;
-                        ?>
-                            <div data-benefits-card="" class="h-benefits__item <?php echo esc_attr($custom_class); ?>">
-                                <div data-benefits="arrow" class="h-benefits__item-arrow-wrap">
-                                    <?php echo wp_get_attachment_image($arrow_image_black, 'full', false, array('data-benefits' => 'arrow-black', 'alt' => '', 'class' => 'h-benefits__item-arrow')); ?>
-                                    <?php echo wp_get_attachment_image($arrow_image_white, 'full', false, array('data-benefits' => 'arrow-white', 'alt' => '', 'class' => 'h-benefits__item-arrow arrow--white')); ?>
-                                </div>
-                                <div>
-                                    <div class="h-benefits__item-title-wrap">
-                                        <h3 class="h-benefits__item-title"><?php echo esc_html($title); ?></h3>
-                                    </div>
-                                    <div class="h-benefits__item-text"><?php echo esc_html($description); ?></div>
-                                </div>
+                    <div data-benefits-card="" class="h-benefits__item">
+                        <div data-benefits="arrow" class="h-benefits__item-arrow-wrap"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/66633a02e34d857c33df85fe_ArrowUpRight.svg" loading="lazy" data-benefits="arrow-black" alt="" class="h-benefits__item-arrow"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/6669f342abb3bb0282e39ca2_Frame%2047412.svg" loading="lazy" data-benefits="arrow-white" alt="" class="h-benefits__item-arrow arrow--white"></div>
+                        <div>
+                            <div class="h-benefits__item-title-wrap">
+                                <h3 class="h-benefits__item-title">Professional Web Team</h3>
                             </div>
-                            <?php $counter++; ?>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
+                            <div class="h-benefits__item-text">Our developers bring years of experience to your projects. By&nbsp;creating our internal team matrix and improving our skills continuously, we ensure that you get the team of experts integrating seamlessly with your marketing department, providing collaborative effort that drives success and achieves your objectives efficiently.</div>
+                        </div>
+                    </div>
+                    <div data-benefits-card="" class="h-benefits__item item--2">
+                        <div data-benefits="arrow" class="h-benefits__item-arrow-wrap"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/66633a02e34d857c33df85fe_ArrowUpRight.svg" loading="lazy" data-benefits="arrow-black" alt="" class="h-benefits__item-arrow"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/6669f342abb3bb0282e39ca2_Frame%2047412.svg" loading="lazy" data-benefits="arrow-white" alt="" class="h-benefits__item-arrow arrow--white"></div>
+                        <div>
+                            <div class="h-benefits__item-title-wrap">
+                                <h3 class="h-benefits__item-title">High-Quality Product</h3>
+                            </div>
+                            <div class="h-benefits__item-text">We are committed to delivering exceptional results. Development process and dedication to excellence guarantee that you receive a&nbsp;high-performing, robust, and scalable website that meets all your requirements and needs.</div>
+                        </div>
+                    </div>
+                    <div data-benefits-card="" id="w-node-_951bc8a5-79a9-8846-0b80-eedba74ce35b-76ea5dc5" class="div-block">
+                        <div id="w-node-_2adc4c02-87a6-d5b1-2e1f-f5b551aec388-76ea5dc5" class="h-benefits__item item--3">
+                            <div data-mobile="" data-benefits="arrow" class="h-benefits__item-arrow-wrap"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/66633a02e34d857c33df85fe_ArrowUpRight.svg" loading="lazy" data-benefits="arrow-black" alt="" class="h-benefits__item-arrow"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/6669f342abb3bb0282e39ca2_Frame%2047412.svg" loading="lazy" data-benefits="arrow-white" alt="" class="h-benefits__item-arrow arrow--white"></div>
+                            <div data-desktop=""></div>
+                            <div>
+                                <div class="h-benefits__item-title-wrap">
+                                    <h3 class="h-benefits__item-title">Professional Web Team</h3>
+                                </div>
+                                <div class="h-benefits__item-text">You get complete transparency when it comes to billing, charging for every quarter-hour of work without rounding up. Our dashboard, available at any time, lets you track the exact time we've dedicated to your projects in real-time.</div>
+                            </div>
+                        </div>
+                        <div data-desktop-flex="" id="w-node-d20d90b6-c93b-c3fe-e889-1b562c198872-76ea5dc5" class="h-benefits__item item--4">
+                            <div></div>
+                            <div data-benefits="arrow" class="h-benefits__item-arrow-wrap arrow--last"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/66633a02e34d857c33df85fe_ArrowUpRight.svg" loading="lazy" data-benefits="arrow-black" alt="" class="h-benefits__item-arrow"><img src="https://cdn.prod.website-files.com/65fb2d744558f90976ea5dc6/6669f342abb3bb0282e39ca2_Frame%2047412.svg" loading="lazy" data-benefits="arrow-white" alt="" class="h-benefits__item-arrow arrow--white"></div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>

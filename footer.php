@@ -29,57 +29,57 @@
 
 
   <section class="footer-contacts">
-    <div class="footer-contacts__left">
-      <div class="footer-contacts__item">
-        <div class="footer-contacts__item-name">Email</div>
-        <?php
-        // Получить значение поля "footer_email" из страницы опций
-        $footer_email = get_field('footer_email', 'option');
+    <div class="footer-contacts__item">
+      <div class="footer-contacts__item-name">Email</div>
+      <?php
+      // Получить значение поля "footer_email" из страницы опций
+      $footer_email = get_field('footer_email', 'option');
 
-        // Проверить и вывести значение
-        if ($footer_email)
-        {
-          echo '<a href="mailto:' . esc_html($footer_email) . '" class="footer-contacts__item-text">' . esc_html($footer_email) . '</a>';
-        }
-        ?>
+      // Проверить и вывести значение
+      if ($footer_email)
+      {
+        echo '<a href="mailto:' . esc_html($footer_email) . '" class="footer-contacts__item-text">' . esc_html($footer_email) . '</a>';
+      }
+      ?>
 
-      </div>
-      <div class="footer-contacts__item">
-        <div class="footer-contacts__item-name">Call</div>
-
-        <?php
-        // Получить значение поля "footer_phone" из страницы опций
-        $footer_phone = get_field('footer_phone', 'option');
-
-        // Проверить и вывести значение
-        if ($footer_phone)
-        {
-          // Удалить все символы, кроме цифр и знака плюса
-          $phone_sanitized = preg_replace('/[^\d+]/', '', $footer_phone);
-          echo '<a href="tel:' . esc_attr($phone_sanitized) . '" class="footer-contacts__item-text">' . esc_html($footer_phone) . '</a>';
-        }
-        ?>
-
-
-
-
-      </div>
     </div>
-    <div class="footer-contacts__right">
-      <div class="footer-contacts__item">
-        <div class="footer-contacts__item-name">Find us</div>
-        <?php
-        // Получить значение поля "footer_adresss" из страницы опций
-        $footer_address = get_field('footer_address', 'option');
+    <div class="footer-contacts__item">
+      <div class="footer-contacts__item-name">Call</div>
 
-        // Проверить и вывести значение
-        if ($footer_address)
-        {
-          echo '   <a href="https://www.google.ru/maps/place/1655+Barclay+Blvd,+Buffalo+Grove,+IL+60089,+USA/@42.1804581,-87.9411633,15z/data=!4m6!3m5!1s0x880fbc2a82e607a9:0xfce2cc45d23f95c1!8m2!3d42.1802676!4d-87.9333618!16s%2Fg%2F11c21jymwm?entry=ttu" target="_blank" class="footer-contacts__item-text">' . esc_html($footer_address) . '</a>';
-        }
-        ?>
+      <?php
+      // Получить значение поля "footer_phone" из страницы опций
+      $footer_phone = get_field('footer_phone', 'option');
 
-      </div>
+      // Проверить и вывести значение
+      if ($footer_phone)
+      {
+        // Удалить все символы, кроме цифр и знака плюса
+        $phone_sanitized = preg_replace('/[^\d+]/', '', $footer_phone);
+        echo '<a href="tel:' . esc_attr($phone_sanitized) . '" class="footer-contacts__item-text">' . esc_html($footer_phone) . '</a>';
+      }
+      ?>
+
+
+
+
+    </div>
+    <div id="w-node-_95916d44-1c84-8a57-5d57-70aeb60e16ee-ac2725c8" class="footer-contacts__item">
+      <div class="footer-contacts__item-name">Follow Us</div>
+      <div class="footer-contacts__item-links"><a href="https://www.linkedin.com/company/donehq/" target="_blank" class="footer-contacts__item-text">LinkedIn</a><a href="https://www.facebook.com/donehq.agency" target="_blank" class="footer-contacts__item-text">Facebook</a><a href="https://www.instagram.com/done_hq?igsh=dXN2ZXBkMmJhbnNn" target="_blank" class="footer-contacts__item-text">Instagram</a></div>
+    </div>
+    <div class="footer-contacts__item">
+      <div class="footer-contacts__item-name">Find us</div>
+      <?php
+      // Получить значение поля "footer_adresss" из страницы опций
+      $footer_address = get_field('footer_address', 'option');
+
+      // Проверить и вывести значение
+      if ($footer_address)
+      {
+        echo '   <a href="https://www.google.ru/maps/place/1655+Barclay+Blvd,+Buffalo+Grove,+IL+60089,+USA/@42.1804581,-87.9411633,15z/data=!4m6!3m5!1s0x880fbc2a82e607a9:0xfce2cc45d23f95c1!8m2!3d42.1802676!4d-87.9333618!16s%2Fg%2F11c21jymwm?entry=ttu" target="_blank" class="footer-contacts__item-text">' . esc_html($footer_address) . '</a>';
+      }
+      ?>
+
     </div>
   </section>
   <section class="footer-copyright">

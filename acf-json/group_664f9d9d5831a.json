@@ -20,7 +20,7 @@
                 "layout_6653c61878b37": {
                     "key": "layout_6653c61878b37",
                     "name": "hero_content",
-                    "label": "hero_content",
+                    "label": "Hero content",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -100,7 +100,7 @@
                 "layout_6653ca7671e0f": {
                     "key": "layout_6653ca7671e0f",
                     "name": "text_content",
-                    "label": "text_content",
+                    "label": "Text content",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -267,7 +267,7 @@
                 "layout_66544d84790c0": {
                     "key": "layout_66544d84790c0",
                     "name": "images_section",
-                    "label": "images_section",
+                    "label": "Images section",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -329,7 +329,7 @@
                 "layout_6654757e9ac57": {
                     "key": "layout_6654757e9ac57",
                     "name": "gallery_section",
-                    "label": "gallery_section",
+                    "label": "Gallery Section",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -391,7 +391,7 @@
                 "layout_665461be6de37": {
                     "key": "layout_665461be6de37",
                     "name": "video_image_section",
-                    "label": "video_image_section ",
+                    "label": "Video image section ",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -641,7 +641,7 @@
                 "layout_665465bbff787": {
                     "key": "layout_665465bbff787",
                     "name": "title_and_text",
-                    "label": "title_and_text",
+                    "label": "Title and text",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -691,7 +691,7 @@
                 "layout_6654819fc0ddd": {
                     "key": "layout_6654819fc0ddd",
                     "name": "cats_and_text",
-                    "label": "cats_and_text ",
+                    "label": "Categories and text ",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -721,7 +721,7 @@
                 "layout_66546d0a41d61": {
                     "key": "layout_66546d0a41d61",
                     "name": "c_mobiles",
-                    "label": "c_mobiles",
+                    "label": "C mobiles",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -777,5 +777,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1716814274
+    "modified": 1718361482
 }

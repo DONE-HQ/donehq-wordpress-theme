@@ -561,6 +561,32 @@ path.logo-spinner--symbol {
   transform: rotate(0deg);
 }
 
+.h-benefits__item-arrow {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.h-benefits__item:hover .h-benefits__item-arrow-wrap {
+  transform: rotate(-90deg);
+}
+
+.h-benefits__item:hover .h-benefits__item-arrow {
+  opacity: 0;
+}
+
+.h-benefits__item:hover .h-benefits__item-arrow.arrow--white {
+  opacity: 1;
+}
+
+.h-benefits__item.item--4 {
+  justify-content: end;
+}
+
+.h-benefits__item.item--4 .h-benefits__item-arrow-wrap {
+  top: 60px;
+  left: -20px;
+}
+
 @media screen and (max-width: 767px) {
   .bg-dark {
     background-color: var(--color--primary-blue);
